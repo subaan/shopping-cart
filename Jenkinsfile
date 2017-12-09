@@ -9,7 +9,7 @@ stage("publish to s3") {
     step([
         $class: 'S3BucketPublisher',
         entries: [[
-            sourceFile: '',
+            sourceFile: '/var/lib/jenkins/workspace/shopping-cart/target/shopping-cart.war',
             bucket: 'appranix-demo',
             selectedRegion: 'us-east-1',
             noUploadOnFailure: true,
