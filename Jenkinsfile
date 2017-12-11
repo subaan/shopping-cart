@@ -23,8 +23,6 @@ stage("publish to s3") {
 }
 
    stage('Deploy to Prana') {
-sh 'which ruby'
-sh 'ruby --version'
         //available as an env variable, but will be masked if you try to print it out any which way
        sh '/home/appranix/.rvm/gems/ruby-2.2.4/bin/prana auth logout'
        sh 'echo successfully logged out'
