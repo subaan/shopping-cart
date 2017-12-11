@@ -29,19 +29,19 @@ stage("publish to s3") {
        sh 'prana auth logout'
        sh 'echo successfully logged out'
 
-       sh "prana auth set_token s_BWUxnh_W8qEbdLS7pM"
+       sh "prana auth set_token eyhteLMyshgc1vHy69e5"
        sh 'echo successfully logged in'
 
-       sh "prana config set organization=devorg-veeresh -g"
+       sh "prana config set organization=testorg-test2 -g"
        sh 'echo organization is set as devorg'
 
-       sh "prana config set assembly=demo-shopping-cart -g"
-       sh 'echo assembly is set as demo-shopping-cart'
+       sh "prana config set assembly=shopping-cart -g"
+       sh 'echo assembly is set as shopping-cart'
 
-       sh "prana configure variable update -a demo-shopping-cart -e prod --platform=tomcat appVersion=${env.BUILD_ID}"
+       sh "prana configure variable update -a shopping-cart -e prod --platform=tomcat appVersion=${env.BUILD_ID}"
        sh 'echo Transition variable update build ver'
 
-       sh "prana configure variable update -a demo-shopping-cart -e prod --platform=tomcat jenkinsBuildUrl=http://localhost:8080/job/shopping-cart/${env.BUILD_ID}"
+       sh "prana configure variable update -a shopping-cart -e prod --platform=tomcat jenkinsBuildUrl=http://localhost:8080/job/shopping-cart/${env.BUILD_ID}"
        sh 'echo Transition variable update build ver'
 
        sh "prana transition commit init-commit -e prod"
