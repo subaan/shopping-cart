@@ -1,7 +1,7 @@
 node {
 
     environment {
-        PATH = $PATH:/home/appranix/.rvm/gems/ruby-2.2.4/bin/prana
+        PATH = '$PATH:/home/appranix/.rvm/gems/ruby-2.2.4/bin/prana'
     } 
    stage('Build') {
          git 'https://github.com/subaan/shopping-cart.git/'
