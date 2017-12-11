@@ -2,8 +2,6 @@ node {
    stage('Build') {
          git 'https://github.com/subaan/shopping-cart.git/'
          sh 'mvn package'
-         archive 'target/*.war'
-         sh 'echo Build id: ${env.BUILD_ID}'
    }
 
 stage("publish to s3") {
