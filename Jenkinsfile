@@ -23,11 +23,12 @@ stage("publish to s3") {
 }
 
    stage('Deploy to Prana') {
+sh 'which ruby'
         //available as an env variable, but will be masked if you try to print it out any which way
-       sh '/home/appranix/.rvm/gems/ruby-2.2.4/bin/prana auth logout'
+       sh 'su /home/appranix/.rvm/gems/ruby-2.2.4/bin/prana auth logout'
        sh 'echo successfully logged out'
 
-       sh "/home/appranix/.rvm/gems/ruby-2.2.4/bin/prana auth set_token eyhteLMyshgc1vHy69e5"
+       sh "su /home/appranix/.rvm/gems/ruby-2.2.4/bin/prana auth set_token eyhteLMyshgc1vHy69e5"
        sh 'echo successfully logged in'
 
        sh "/home/appranix/.rvm/gems/ruby-2.2.4/bin/prana config set organization=testorg-test2 -g"
