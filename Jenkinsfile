@@ -24,10 +24,10 @@ stage("publish to s3") {
 
    stage('Deploy to Prana') {
         //available as an env variable, but will be masked if you try to print it out any which way
-       sh 'su prana auth logout'
+       sh 'prana auth logout'
        sh 'echo successfully logged out'
 
-       sh "su prana auth set_token eyhteLMyshgc1vHy69e5"
+       sh "prana auth set_token eyhteLMyshgc1vHy69e5"
        sh 'echo successfully logged in'
 
        sh "prana config set organization=testorg-test2 -g"
