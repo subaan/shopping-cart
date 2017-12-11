@@ -24,6 +24,7 @@ stage("publish to s3") {
 
    stage('Deploy to Prana') {
 
+       sh "export PATH=$PATH:/home/appranix/.rvm/gems/ruby-2.2.4/bin/prana"
         //available as an env variable, but will be masked if you try to print it out any which way
        sh 'prana auth logout'
        sh 'echo successfully logged out'
