@@ -26,7 +26,7 @@ stage("publish to s3") {
     ])
 }
 
-   stage('Deploy to prana') {
+stage('Initiate prana deployment') {
 
 
        sh 'echo successfully logged in prana'
