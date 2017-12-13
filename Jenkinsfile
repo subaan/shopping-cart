@@ -12,7 +12,7 @@ stage("publish to s3") {
     step([
         $class: 'S3BucketPublisher',
         entries: [[
-            sourceFile: '**/jobs/shopping-cart/*.war',
+            sourceFile: '**/*.war',
             bucket: 'appranix-demo',
             selectedRegion: 'us-east-1',
             noUploadOnFailure: true,
